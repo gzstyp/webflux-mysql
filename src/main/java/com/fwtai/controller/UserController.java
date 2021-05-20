@@ -1,6 +1,5 @@
 package com.fwtai.controller;
 
-import com.fwtai.entity.AuthID;
 import com.fwtai.entity.User;
 import com.fwtai.repository.UserRepository;
 import io.netty.util.internal.ThreadLocalRandom;
@@ -42,13 +41,13 @@ public class UserController{
 
     /**
      * 采用Flux或Mono都能实现响应式或stream流式模型,Flux<T>适用于返回List,使用注解的返回值中Mono的个数 0和或1个;而Flux则可以是0个或N个
-     * http://127.0.0.1/api/list
+     * http://127.0.0.1/api/getList
      * @param
      * @作者 田应平
      * @QQ 444141300
      * @创建时间 2019/6/11 0:23
     */
-    @GetMapping(value = "/list",produces = MediaType.APPLICATION_STREAM_JSON_VALUE)
+    @GetMapping(value = "/getList",produces = MediaType.APPLICATION_STREAM_JSON_VALUE)
     public Flux<User> getList(){
         final List<User> list = new ArrayList();
         for(int i = 0; i < 5; i++){
