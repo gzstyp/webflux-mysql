@@ -16,6 +16,11 @@
 
         Spring WebFlux 使用 R2DBC 访问 MySQL 数据库,当主键且仅当为自增长时id为空时是添加,不为空时是编辑
 
+        随着响应式编程在网络编程中使用越发的普及，mysql等一系列的关系型数据库也在r2dbc等包的帮助下支持响应式。
+        虽然响应式跟原来的sevlet的写法区别比较大，但是spring尽量保持原来的风格，
+        编写control层和service层的方法跟原来基本相同，略有区别就是controller返回的Mono或是Flux。
+        特别是对crud的支持，跟原来的jpa基本相同。
+
     </description>
 
     <properties>
