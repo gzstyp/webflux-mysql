@@ -1,12 +1,8 @@
 package com.fwtai.entity;
 
 import lombok.Data;
-import org.hibernate.annotations.GenericGenerator;
 import org.springframework.data.relational.core.mapping.Table;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Table("user")//若表名和实体不一致时指定即可
@@ -21,7 +17,7 @@ public class User{
     public User(){}
 
     @Id
-    /**也是ok的
+    /**也是ok的,使用了'ReactiveCrudRepository' 无需配置这玩意
      @GeneratedValue(generator="uuid")
      @GenericGenerator(name="uuid",strategy="uuid")
      @Column(name = "kid")*/
